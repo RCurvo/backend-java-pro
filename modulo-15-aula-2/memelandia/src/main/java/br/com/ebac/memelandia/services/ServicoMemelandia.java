@@ -19,17 +19,6 @@ public class ServicoMemelandia {
     @Autowired
     private RepositorioCategoriaMeme repositorioCategoriaMeme;
 
-    @Autowired
-    private RepositorioUsuario repositorioUsuario;
-
-    public Usuario novoUsuario(Usuario usuario) {
-        return repositorioUsuario.save(usuario);
-    }
-
-    public List<Usuario> listaTodosUsuarios() {
-        return repositorioUsuario.findAll();
-    }
-
     public Meme novoMeme(Meme meme) {
         return repositorioMeme.save(meme);
     }
