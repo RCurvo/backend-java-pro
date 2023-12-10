@@ -11,6 +11,10 @@ public class UsuarioDTO implements Serializable {
 
     private final Date dataCadastro;
 
+    private String idNovoUsuario;
+
+    private Integer idade;
+
     public UsuarioDTO(Long id, String nome, String email, Date dataCadastro) {
         this.id = id;
         this.nome = nome;
@@ -32,5 +36,21 @@ public class UsuarioDTO implements Serializable {
 
     public Date getDataCadastro() {
         return dataCadastro;
+    }
+
+    public String getIdNovoUsuario() {
+        return idNovoUsuario;
+    }
+
+    public void setIdNovoUsuario(String idNovoUsuario) {
+        this.idNovoUsuario = idNovoUsuario;
+    }
+
+    public Integer getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
     }
 }

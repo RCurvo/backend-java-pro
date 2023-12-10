@@ -1,5 +1,6 @@
 package br.com.ebac.memelandia.utils;
 
+import br.com.ebac.memelandia.dto.NovoUsuarioDTO;
 import br.com.ebac.memelandia.dto.UsuarioDTO;
 import br.com.ebac.memelandia.entities.Usuario;
 
@@ -24,5 +25,19 @@ public final class UsuarioUtils {
             usuariosDTO.add(toUsuarioDTO(usuario));
         }
         return usuariosDTO;
+    }
+
+    public static UsuarioDTO fromNovoUsuarioDTO(NovoUsuarioDTO novoUsuarioDTO){
+       UsuarioDTO usuarioDTO = new UsuarioDTO(null,novoUsuarioDTO.getNome(), novoUsuarioDTO.getEmail(),novoUsuarioDTO.getDataCadastro());
+       usuarioDTO.setIdNovoUsuario(novoUsuarioDTO.getId());
+       usuarioDTO.setIdade(novoUsuarioDTO.getIdade());
+
+       return usuarioDTO;
+    }
+
+    public static NovoUsuarioDTO toNoVoUsuarioDTO(UsuarioDTO usuarioDTO){
+        NovoUsuarioDTO novoUsuarioDTO = new NovoUsuarioDTO(null, usuarioDTO.getNome(),usuarioDTO.getEmail(),usuarioDTO.getDataCadastro());
+        novoUsuarioDTO.setIdade(usuarioDTO.getIdade());
+        return novoUsuarioDTO;
     }
 }
