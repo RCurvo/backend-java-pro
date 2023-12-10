@@ -23,6 +23,8 @@ public class CategoriaMeme {
     @JoinColumn(name = "usuario_id")
     private Usuario usuario;
 
+    private String idNovoUsuario;
+
     public Usuario getUsuario() {
         return usuario;
     }
@@ -63,5 +65,13 @@ public class CategoriaMeme {
 
     public void setDataCadastro(Date dataCadastro) {
         this.dataCadastro = dataCadastro;
+    }
+
+    public String getIdNovoUsuario() {
+        return idNovoUsuario;
+    }
+
+    public void setIdNovoUsuario(String idNovoUsuario) {
+        idNovoUsuario = idNovoUsuario;
     }
 }

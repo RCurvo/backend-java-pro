@@ -11,4 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public interface ClienteFeignNovoUsuario {
     @RequestMapping(method = RequestMethod.POST, path = "/usuarios")
     public NovoUsuarioDTO criarNovoUsuario(@RequestBody NovoUsuarioDTO novoUsuarioDTO);
+
+    @RequestMapping(method = RequestMethod.GET, path = "/usuarios")
+    public Iterable<NovoUsuarioDTO> encontrarTodos();
 }

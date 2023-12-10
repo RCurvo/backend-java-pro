@@ -16,6 +16,7 @@ CREATE TABLE categoria_meme (
    descricao VARCHAR(255) NOT NULL,
    data_cadastro date NOT NULL,
    usuario_id BIGINT,
+   id_novo_usuario VARCHAR(255),
    CONSTRAINT pk_categoriameme PRIMARY KEY (id)
 );
 
@@ -30,6 +31,8 @@ CREATE TABLE meme (
    data_cadastro date NOT NULL,
    categoria_meme_id BIGINT,
    usuario_id BIGINT,
+   id_novo_usuario VARCHAR(255),
+   id_novo_categoria_meme VARCHAR(255),
    CONSTRAINT pk_meme PRIMARY KEY (id)
 );
 

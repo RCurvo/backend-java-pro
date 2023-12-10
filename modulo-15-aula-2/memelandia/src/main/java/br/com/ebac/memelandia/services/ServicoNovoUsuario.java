@@ -1,11 +1,11 @@
 package br.com.ebac.memelandia.services;
 
 import br.com.ebac.memelandia.dto.NovoUsuarioDTO;
-import br.com.ebac.memelandia.dto.UsuarioDTO;
+
 import br.com.ebac.memelandia.feign.ClienteFeignNovoUsuario;
-import br.com.ebac.memelandia.utils.UsuarioUtils;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Component;
+
 
 @Component
 public class ServicoNovoUsuario {
@@ -16,11 +16,11 @@ public class ServicoNovoUsuario {
         this.clienteFeignNovoUsuario = clienteFeignNovoUsuario;
     }
 
-    public UsuarioDTO criarNovoUsuario(UsuarioDTO UsuarioDTO) {
-        NovoUsuarioDTO novoUsuarioDTO = UsuarioUtils.toNoVoUsuarioDTO(UsuarioDTO);
-        novoUsuarioDTO = clienteFeignNovoUsuario.criarNovoUsuario(novoUsuarioDTO);
-        System.out.println("--------------------------------------------------BATEU AQUI-------------------------------------------------------------------------");
+    public NovoUsuarioDTO criarNovoUsuario(NovoUsuarioDTO usuarioDTO) {
+        return clienteFeignNovoUsuario.criarNovoUsuario(usuarioDTO);
+    }
 
-        return UsuarioUtils.fromNovoUsuarioDTO(novoUsuarioDTO);
+    public Iterable<NovoUsuarioDTO> encontrarTodos() {
+        return clienteFeignNovoUsuario.encontrarTodos();
     }
 }
