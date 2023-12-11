@@ -15,16 +15,6 @@ public class ControllerMemelandia {
     @Autowired
     private ServicoMemelandia servicoMemelandia;
 
-    @GetMapping("/categorias")
-    public List<CategoriaMeme> buscaCategorias() {
-        return servicoMemelandia.listaTodasCategorias();
-    }
-
-    @PostMapping("/categorias")
-    public CategoriaMeme novaCategoria(@RequestBody CategoriaMeme categoriaMeme) {
-        return servicoMemelandia.novaCategoriaMeme(categoriaMeme);
-    }
-
     @GetMapping("/memes")
     public List<Meme> buscaMemes() {
         return servicoMemelandia.listaTodosMemes();
