@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @FeignClient(value = "cliente-novo-categoria-meme", url = "http://localhost:8083")
 public interface ClienteFeignNovoCategoriaMeme {
     @RequestMapping(method = RequestMethod.POST, path = "/categoria")
-    public CategoriaMemeDTO criarNovoUsuario(@RequestBody CategoriaMemeDTO categoriaMeme);
+    public CategoriaMemeDTO criarNovaCategoriaMeme(@RequestBody CategoriaMemeDTO categoriaMeme);
 
     @RequestMapping(method = RequestMethod.GET, path = "/categoria")
     public Iterable<CategoriaMemeDTO> encontrarTodos();

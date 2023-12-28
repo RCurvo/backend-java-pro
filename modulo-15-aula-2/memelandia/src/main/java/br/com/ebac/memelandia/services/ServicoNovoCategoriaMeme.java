@@ -14,7 +14,7 @@ public class ServicoNovoCategoriaMeme {
     }
 
     public CategoriaMemeDTO criarNovaCategoria(CategoriaMemeDTO categoriaMemeDTO) {
-        return clienteFeignNovoCategoriaMeme.criarNovoUsuario(categoriaMemeDTO);
+        return clienteFeignNovoCategoriaMeme.criarNovaCategoriaMeme(categoriaMemeDTO);
     }
 
     public Iterable<CategoriaMemeDTO> encontrarTodos() {
