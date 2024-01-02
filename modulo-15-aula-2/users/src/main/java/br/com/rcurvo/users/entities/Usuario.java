@@ -1,6 +1,9 @@
 package br.com.rcurvo.users.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 
 import java.sql.Date;
 import java.util.UUID;
@@ -15,11 +18,14 @@ public class Usuario {
     private String nome;
 
     @Column(name = "email", nullable = false)
+    @Email
     private String email;
 
     @Column(name = "data_cadastro", nullable = false)
     private Date dataCadastro;
 
+    @Max(value = 200)
+    @Min(value = 0)
     private Long idade;
 
     public Usuario() {}
