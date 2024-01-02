@@ -3,6 +3,9 @@ package br.com.rcurvo.memes.entities;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.PrePersist;
+import jakarta.validation.constraints.NotBlank;
+import org.hibernate.validator.constraints.URL;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.sql.Date;
 import java.util.UUID;
@@ -13,27 +16,36 @@ public class Meme {
     @Id
     private String id;
 
+    @NotBlank
     private String nome;
 
+    @NotBlank
     private String descricao;
 
+
+    @DateTimeFormat(pattern="dd-MMM-yyyy")
     private Date dataCadastro;
 
+    @URL
+    private String url;
 
+    @NotBlank
     private String categoriaMemeId;
 
+    @NotBlank
     private String usuarioId;
 
     public Meme() {
     }
 
-    public Meme(String id, String nome, String descricao, Date dataCadastro, String categoriaMemeId, String usuarioId) {
+    public Meme(String id, String nome, String descricao, Date dataCadastro, String url, String categoriaMemeId, String usuarioId) {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
         this.dataCadastro = dataCadastro;
         this.categoriaMemeId = categoriaMemeId;
         this.usuarioId = usuarioId;
+        this.url = url;
     }
 
     public String getId() {
@@ -82,6 +94,14 @@ public class Meme {
 
     public void setUsuarioId(String usuarioId) {
         this.usuarioId = usuarioId;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     @PrePersist
