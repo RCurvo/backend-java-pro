@@ -14,4 +14,7 @@ public interface ClienteFeignMeme {
 
     @RequestMapping(method = RequestMethod.GET, path = "/memes")
     public Iterable<MemeDTO> encontrarTodos();
+
+    @RequestMapping(method = RequestMethod.GET, path = "/memes/random")
+    public MemeDTO encontrarMemeAleatorio();
 }
